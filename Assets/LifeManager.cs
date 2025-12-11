@@ -22,15 +22,11 @@ public class LifeManager : MonoBehaviour
         lives = 3;
         OnlivesChange?.Invoke(lives);
     }
-
-    public void DropBall()
-    {
-        lives--;
-        OnlivesChange?.Invoke(lives);
-    }
     public void ChangeLife(int amount)
     {
         this.lives += amount;
+        OnlivesChange?.Invoke(lives);
+
         if (this.lives < 0)
         {
             GameManager.Instance.GameOver();

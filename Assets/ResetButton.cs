@@ -16,7 +16,7 @@ public class ResetButton : MonoBehaviour
     }
     private void Onclick()
     {
-        GameManager.Instance.Restart();
+        GameManager.Instance.ResetGame();
     }
 
 

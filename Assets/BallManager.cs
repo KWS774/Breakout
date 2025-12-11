@@ -4,28 +4,22 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-
-    //ƒ{[ƒ‹‚ªÁ‚¦‚½‚ç
-
-
-
-    private int ballCount = 0;
+    private int ballCount = 1;
     public int BallCount => ballCount;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ChangeBallCount(int n)
     {
         ballCount += n;
+        if (ballCount <= 0)
+        {
+            GameManager.Instance.LifeManager.ChangeLife(-1);
+
+            GameManager.Instance.RestartGame();
+        }
+    }
+
+    public void ResetBallCount()
+    {
+        ballCount = 1;
     }
 
 }

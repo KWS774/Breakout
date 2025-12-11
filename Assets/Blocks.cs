@@ -9,6 +9,7 @@ public class Block : MonoBehaviour
         Destroy(this.gameObject);
         Broken();
         Instantiate(collision.gameObject);
+        GameManager.Instance.BallManager.ChangeBallCount(1);
     }
 
     public void Broken()

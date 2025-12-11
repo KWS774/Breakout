@@ -9,10 +9,15 @@ public class DeathZone : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject
+        //if(collision.gameObject.n
+
     }
 
-
-    // Update is called once per frame
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.gameObject.name);
+        Destroy(other.gameObject);
+        GameManager.Instance.BallManager.ChangeBallCount(-1);
+    }
 
 }
